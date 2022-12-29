@@ -1,8 +1,8 @@
-const attribution = document.querySelector('.attribution')
-console.log(attribution)
+
+const navigation = document.querySelector('.primary-nav')
 
 const button = document.querySelector('.navigation-menu-btn')
 
 button.addEventListener('click', e => {
-  console.log('you\'ve clicked the button')
+  document.body.classList.toggle('menu-is-open')
 })
