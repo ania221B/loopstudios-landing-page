@@ -12,12 +12,14 @@ $clr-neutral-900: hsl(0, 0%, 0%);
 $ff-primary: 'Alata', sans-serif;
 $ff-secondary: 'Josefin Sans', sans-serif;
 $fs-400: 0.9375rem;
+$fs-600: 1.75rem;
 $fs-800: 1.9rem;
 $fs-900: 2.5rem;
 $fw-300: 300;
 $fw-400: 400;
 
-$offset-inline: 1.5rem;
+$offset-base: 1.5rem;
+$offset-medium: 2.5rem;
 
 /* ==================
     RESET
@@ -114,7 +116,7 @@ select {
     UTILITY CLASSES
 ==================== */
 .container {
-    width: min(75rem, 100% - ($offset-inline * 2));
+    width: min(75rem, 100% - ($offset-base * 2));
     margin-inline: auto;
   }
   
@@ -148,6 +150,7 @@ select {
   }
 
   .fs-400 { font-size: $fs-400; }
+  .fs-600 { font-size: $fs-600; }
   .fs-800 { font-size: $fs-800; }
   .fs-900 { font-size: $fs-900; }
   
@@ -179,10 +182,20 @@ select {
     z-index: 1;
   }
 
+  .margin-xl {
+    margin-top: $offset-base * 1.5;
+  }
+
   .btn {
     background: none;
     border: none;
     cursor: pointer;
+  }
+
+  .btn[data-type="primary"] {
+    padding: 0.35rem 1.75rem;
+    border: 0.125rem solid $clr-neutral-300;
+    letter-spacing: 0.25rem;
   }
 
 /* ==================
@@ -240,7 +253,7 @@ select {
     justify-content: center;
     height: 100%;
     width: 100%;
-    padding-inline: $offset-inline;
+    padding-inline: $offset-base;
     transform: translateX(-100%);
     transition: transform 350ms ease-in-out;
 
@@ -281,7 +294,7 @@ select {
             display: grid;
             place-items: center;
             position: absolute;
-            inset: 2rem $offset-inline auto auto;
+            inset: 2rem $offset-base auto auto;
     
             width: 2.85rem;
             aspect-ratio: 1;
@@ -296,7 +309,7 @@ select {
 .grid[data-section="hero"] {
   --grid-gap: 0;
   display: grid;
-  grid-template-columns: $offset-inline 1fr $offset-inline;
+  grid-template-columns: $offset-base 1fr $offset-base;
   place-items: center;
 
   & > * {
@@ -311,7 +324,7 @@ select {
   h2 {
     grid-column: 2;
     border: 0.125rem solid $clr-neutral-100;
-    padding: 1.5rem $offset-inline;
+    padding: 1.5rem $offset-base;
   }
 }
 
@@ -322,18 +335,18 @@ select {
 .grid[data-section="about"] {
   --grid-gap: 0;
   display: grid;
-  grid-template-columns: $offset-inline 1fr $offset-inline;
+  grid-template-columns: $offset-base 1fr $offset-base;
 
-  padding-block-start: $offset-inline * 3;
-  padding-block-end: $offset-inline * 1.5;
+  padding-block-start: $offset-base * 3;
+  padding-block-end: $offset-base * 1.5;
 
   & > * {
     grid-column: 2;
   }
 
   .content-container {
-    padding-block: $offset-inline * 1.5;
-    padding-inline: $offset-inline * 0.5;
+    padding-block: $offset-base * 1.5;
+    padding-inline: $offset-base * 0.5;
     text-align: center;
   }
 }
@@ -345,33 +358,74 @@ select {
 .grid[data-section="gallery"] {
   --grid-gap: 0;
   display: grid;
-  grid-template-columns: $offset-inline 1fr $offset-inline;
+  grid-template-columns: $offset-base 1fr $offset-base;
+  padding-block-end: $offset-base * 3;
 
   & > * {
     grid-column: 2;
   }
+
+  button {
+    justify-self: center;
+  }
 }
 
 .gallery__list {
-  --flow-space: #{$offset-inline};
+  --flow-space: #{$offset-base};
   padding: 0;
 }
 
 .card {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  background-image: linear-gradient(to right, rgba($clr-neutral-900, 0.6), rgba($clr-neutral-900, 0.05));
 
     & > * {
       grid-row: 1;
+      grid-column: 1;
     }
     picture {
-      grid-column: 1 / -1;
       z-index: -1;
+      grid-column: 1 / -1;
     }
 
     h3 {
-      padding: $offset-inline;
-      grid-column: 1;
+      max-width: 12ch;
+      padding: $offset-base;
       justify-self: start;
       align-self: end;
     }
+}
+
+/* ==================
+    FOOTER
+==================== */
+
+footer {
+  padding-block: $offset-medium;
+  & > .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.secondary-nav {
+  padding: 0;
+
+  li:where(:not(:first-child)) {
+    margin: 1rem 0 0 0;
+  }
+  a {
+    color: $clr-neutral-100;
+    text-decoration: none;
+  }
+}
+
+.social-list {
+  padding: 0;
+  flex-direction: row;
+  justify-content: center;
+
+  li:where(:not(:first-child)) {
+    margin: 0 0 0 0.25rem;
+  }
 }
