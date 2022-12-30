@@ -100,9 +100,9 @@
     </section>
 
     <section class="gallery">
-      <div class="grid" data-section="gallery">
+      <div class="grid flow" data-section="gallery">
         <h2 class="title fs-800 text-center text-black">Our creations</h2>
-        <ul class="gallery__list flow" role="list">
+        <ul class="gallery__list flow margin-xl" role="list">
           <li class="card grid">
             <h3 class="title fs-600 text-white">Deep earth</h3>
             <picture>
@@ -160,44 +160,60 @@
             </picture>
           </li>
         </ul>
-        <button class="uppercase">See all</button>
+        <button class="btn uppercase" data-type="primary">See all</button>
       </div>
     </section>
   </main>
-  <footer>
-    <div class="container">
-      <nav>
-        <ul class="secondary-nav" role="list">
-          <li>
-            <a href="">About</a>
-          </li>
-          <li>
-            <a href="">Careers</a>
-          </li>
-          <li>
-            <a href="">Events</a>
-          </li>
-          <li>
-            <a href="">Products</a>
-          </li>
-          <li>
-            <a href="">Support</a>
-          </li>
-        </ul>
-      </nav>
+  <footer class="bg-black text-center flow">
+    <div class="container flex">
       <div>
-        <ul role="list">
+        <h2 class="page-title stack-up">
+          <span class="visually-hidden">Loopstudios</span>
+          <a href="" aria-hidden="true">
+            <img src="assets/logo.svg" alt="" />
+          </a>
+        </h2>
+        <nav>
+          <ul class="secondary-nav" role="list">
+            <li>
+              <a href="">About</a>
+            </li>
+            <li>
+              <a href="">Careers</a>
+            </li>
+            <li>
+              <a href="">Events</a>
+            </li>
+            <li>
+              <a href="">Products</a>
+            </li>
+            <li>
+              <a href="">Support</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <ul class="social-list flex" role="list">
           <li>
-            <a href=""></a>
+            <a href="">
+              <img src="assets/icon-facebook.svg" alt="">
+            </a>
           </li>
           <li>
-            <a href=""></a>
+            <a href="">
+              <img src="assets/icon-twitter.svg" alt="">
+            </a>
           </li>
           <li>
-            <a href=""></a>
+            <a href="">
+              <img src="assets/icon-pinterest.svg" alt="">
+            </a>
           </li>
           <li>
-            <a href=""></a>
+            <a href="">
+              <img src="assets/icon-instagram.svg" alt="">
+            </a>
           </li>
         </ul>
         <p>© 2021 Loopstudios. All rights reserved.</p>
@@ -205,7 +221,7 @@
     </div>
   </footer>
 
-  <div class="attribution">
+  <div class="attribution bg-black">
     Challenge by
     <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
   </div>
