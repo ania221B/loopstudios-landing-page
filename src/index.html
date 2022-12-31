@@ -48,7 +48,7 @@
             <path class="line bottom" d="M20, 75 h60"></path>
           </svg>
         </button>
-        <ul id="primary-nav" class="primary-nav flex" data-state="closed" role="list">
+        <ul id="primary-nav" class="primary-nav underline-on-hover flex" data-state="closed" role="list">
           <li>
             <a href="">About</a>
           </li>
@@ -72,10 +72,12 @@
     <section class="hero">
       <div class="grid" data-section="hero">
         <h2 class="title fs-900 text-white">Immersive experiences that deliver</h2>
-        <picture>
-          <source srcset="assets/desktop/image-hero.jpg" media="(min-width: 40em)" />
-          <img src="assets/mobile/image-hero.jpg" alt="" />
-        </picture>
+        <div class="image-container">
+          <picture>
+            <source srcset="assets/desktop/image-hero.jpg" media="(min-width: 40em)" />
+            <img src="assets/mobile/image-hero.jpg" alt="" />
+          </picture>
+        </div>
       </div>
     </section>
 
@@ -103,61 +105,77 @@
       <div class="grid flow" data-section="gallery">
         <h2 class="title fs-800 text-center text-black">Our creations</h2>
         <ul class="gallery__list flow margin-xl" role="list">
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">Deep earth</h3>
-            <picture>
-              <source srcset="assets/desktop/image-deep-earth.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-deep-earth.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">Deep earth</h3>
+              <picture>
+                <source srcset="assets/desktop/image-deep-earth.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-deep-earth.jpg" alt="" />
+              </picture>
+            </a>
           </li>
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">Night arcade</h3>
-            <picture>
-              <source srcset="assets/desktop/image-night-arcade.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-night-arcade.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">Night arcade</h3>
+              <picture>
+                <source srcset="assets/desktop/image-night-arcade.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-night-arcade.jpg" alt="" />
+              </picture>
+            </a>
           </li>
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">Soccer team VR</h3>
-            <picture>
-              <source srcset="assets/desktop/image-soccer-team.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-soccer-team.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">Soccer team VR</h3>
+              <picture>
+                <source srcset="assets/desktop/image-soccer-team.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-soccer-team.jpg" alt="" />
+              </picture>
+            </a>
           </li>
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">The grid</h3>
-            <picture>
-              <source srcset="assets/desktop/image-grid.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-grid.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">The grid</h3>
+              <picture>
+                <source srcset="assets/desktop/image-grid.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-grid.jpg" alt="" />
+              </picture>
+            </a>
           </li>
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">From up above VR</h3>
-            <picture>
-              <source srcset="assets/desktop/image-from-above.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-from-above.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">From up above VR</h3>
+              <picture>
+                <source srcset="assets/desktop/image-from-above.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-from-above.jpg" alt="" />
+              </picture>
+            </a>
           </li>
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">Pocket borealis</h3>
-            <picture>
-              <source srcset="assets/desktop/image-pocket-borealis.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-pocket-borealis.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">Pocket borealis</h3>
+              <picture>
+                <source srcset="assets/desktop/image-pocket-borealis.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-pocket-borealis.jpg" alt="" />
+              </picture>
+            </a>
           </li>
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">The curiosity</h3>
-            <picture>
-              <source srcset="assets/desktop/image-curiosity.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-curiosity.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">The curiosity</h3>
+              <picture>
+                <source srcset="assets/desktop/image-curiosity.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-curiosity.jpg" alt="" />
+              </picture>
+            </a>
           </li>
-          <li class="card grid">
-            <h3 class="title fs-600 text-white">Make it fisheye</h3>
-            <picture>
-              <source srcset="assets/desktop/image-fisheye.jpg" media="(min-width: 40em)" />
-              <img src="assets/mobile/image-fisheye.jpg" alt="" />
-            </picture>
+          <li class="hover-overlay">
+            <a class="card grid" href="">
+              <h3 class="title fs-600">Make it fisheye</h3>
+              <picture>
+                <source srcset="assets/desktop/image-fisheye.jpg" media="(min-width: 40em)" />
+                <img src="assets/mobile/image-fisheye.jpg" alt="" />
+              </picture>
+            </a>
           </li>
         </ul>
         <button class="btn uppercase" data-type="primary">See all</button>
@@ -174,7 +192,7 @@
           </a>
         </h2>
         <nav>
-          <ul class="secondary-nav" role="list">
+          <ul class="secondary-nav underline-on-hover flex" role="list">
             <li>
               <a href="">About</a>
             </li>
@@ -194,7 +212,7 @@
         </nav>
       </div>
       <div>
-        <ul class="social-list flex" role="list">
+        <ul class="social-list underline-on-hover flex" role="list">
           <li>
             <a href="">
               <img src="assets/icon-facebook.svg" alt="">
