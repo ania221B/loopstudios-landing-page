@@ -18,8 +18,60 @@ $fs-900: 2.5rem;
 $fw-300: 300;
 $fw-400: 400;
 
+// spacing
+
 $offset-base: 1.5rem;
 $offset-medium: 2.5rem;
+
+@mixin underlined-elements($size: 50%) {
+  & > * {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto auto -0.75rem 0;
+      background-color: $clr-neutral-100;
+      width: $size;
+      height: 0.125rem;
+      transform: translateX(0) scaleX(1.5);
+      opacity: 0;
+      transition: opacity 300ms ease-in-out, transform 350ms ease-in-out 100ms;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      transform: translateX(50%) scaleX(1);
+      transition: opacity 300ms ease-in-out, transform 350ms ease-in-out 100ms;
+      
+    }
+  }
+
+}
+
+@mixin bg-change($clr, $bg, $inset: 0) {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: $inset;
+    background: $bg;
+    display: block;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $clr;
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
 
 /* ==================
     RESET
@@ -186,6 +238,14 @@ select {
     margin-top: $offset-base * 1.5;
   }
 
+  .underline-on-hover {
+    @include underlined-elements();
+  }
+
+  .hover-overlay > * {
+    @include bg-change($clr: $clr-neutral-900, $bg: rgba($clr-neutral-100, 0.7));
+  }
+
   .btn {
     background: none;
     border: none;
@@ -196,6 +256,7 @@ select {
     padding: 0.35rem 1.75rem;
     border: 0.125rem solid $clr-neutral-300;
     letter-spacing: 0.25rem;
+    @include bg-change($clr: $clr-neutral-100, $bg: $clr-neutral-900, $inset: -0.125rem);
   }
 
 /* ==================
@@ -316,7 +377,7 @@ select {
     grid-row: 1;
   }
 
-  picture {
+  .image-container {
     grid-column: 1 / -1;
     z-index: -1;
   }
@@ -325,6 +386,17 @@ select {
     grid-column: 2;
     border: 0.125rem solid $clr-neutral-100;
     padding: 1.5rem $offset-base;
+  }
+
+  @media(min-width: 40em) {
+    
+    .image-container {
+      background-image: linear-gradient(to bottom, rgba($clr-neutral-900, 0.5), rgba($clr-neutral-900, 0.2));
+    }
+
+    picture {
+      mix-blend-mode: darken;
+    }
   }
 }
 
@@ -377,7 +449,9 @@ select {
 
 .card {
   grid-template-columns: 1fr;
-  background-image: linear-gradient(to right, rgba($clr-neutral-900, 0.6), rgba($clr-neutral-900, 0.05));
+  background: linear-gradient(to right, rgba($clr-neutral-900, 0.6), rgba($clr-neutral-900, 0.05));
+  color: $clr-neutral-100;
+  text-decoration: none;
 
     & > * {
       grid-row: 1;
@@ -386,6 +460,7 @@ select {
     picture {
       z-index: -1;
       grid-column: 1 / -1;
+      mix-blend-mode: darken;
     }
 
     h3 {
@@ -410,6 +485,8 @@ footer {
 
 .secondary-nav {
   padding: 0;
+  flex-direction: column;
+  align-items: center;
 
   li:where(:not(:first-child)) {
     margin: 1rem 0 0 0;
